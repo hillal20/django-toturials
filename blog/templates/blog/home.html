@@ -4,5 +4,5 @@
 <h1>{{post.title}}</h1>
 <p> by: {{post.author}}</p>
 <p> text: {{post.content}}</p>
-<p> date: {{post.date_posted}}</p>
+<p> date: {{post.date_posted|date:"F d, Y"}}</p>
 {% endfor %} {% endblock %}

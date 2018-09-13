@@ -1,21 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
 
-posts = [
-  {
-    'author':"Thomas",
-    'title':"Blog post 1",
-    'content':'first post content',
-    'date_posted':'august 27, 2018'
-  },
-  {
-    'author':"John",
-    'title':"Blog post 2",
-    'content':'second post content',
-    'date_posted':'august 30, 2018'
-  }
-]
 
 
 
@@ -23,7 +10,7 @@ def home(request):
   # return HttpResponse("<h1> blog home </h1>")
 
   obj = {
-    "posts":posts
+    "posts":Post.objects.all()
   }
   return render(request,'blog/home.html', obj) ## django knows templates folder ny default
 
