@@ -12,7 +12,7 @@ def register(request):
          username = form.cleaned_data.get('username')
          print(f'username ===> {username}')
          messages.success(request, f'=== Account created for {username} ====')
-         return redirect('blog-home')
+         return redirect('login')
     else:
       form = UserRegisterForm()
    
@@ -20,3 +20,7 @@ def register(request):
     "form":form
     }
     return render(request,'users/register.html',obj)
+
+
+def profile(request):
+       return render(request, 'users/profile.html' )
