@@ -1,9 +1,10 @@
 {% extends "blog/base.html"%} {% load crispy_forms_tags%} {% block content %}
 
 <h1>{{user.username }}</h1>
+<h1>{{user.email }}</h1>
+<image src="{{ user.profile.image.url }}">
 
 
+  {% endblock %}
 
-{% endblock %}
-
-<!-- hello  -->
+  <!-- hello  -->
