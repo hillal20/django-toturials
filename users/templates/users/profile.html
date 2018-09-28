@@ -3,8 +3,15 @@
 <h1>{{user.username }}</h1>
 <h1>{{user.email }}</h1>
 <image src="{{ user.profile.image.url }}">
-
-
+  <form method="post" enctype="multipart/form-data">
+    <legend>profile Info:</legend>
+    {% csrf_token %} {{uForm|crispy}} {{pForm|crispy}}
+    <div>
+      <button type="submit">
+        Update
+      </button>
+    </div>
+  </form>
   {% endblock %}
 
   <!-- hello  -->
