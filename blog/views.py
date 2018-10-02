@@ -23,6 +23,7 @@ class PostListView(ListView):
     template_name = 'blog/home.html'  # app/model_ViewType.html
     context_object_name = 'posts'
     ordering = ['-date_posted']  # making the oldest post on top
+    paginate_by = 5
 
 
 class PostDetailView(DetailView):
